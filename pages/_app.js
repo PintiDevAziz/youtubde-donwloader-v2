@@ -1,7 +1,14 @@
-import '../styles/globals.css'
-
+import "../styles/globals.css";
+import Header from "../components/Header";
+import { MainContextProvider } from "../helpers/MainContext";
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <MainContextProvider>
+      <Header />
+
+      <Component {...pageProps} />
+    </MainContextProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
